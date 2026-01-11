@@ -58,25 +58,28 @@
     </div>
     
     <div class="text-center md:text-right mt-4 md:mt-0">
-      <div class="flex justify-center md:justify-end items-center space-x-4 md:space-x-6 mb-2">
-        <a href="contacto.html" target="contenido" data-i18n="contact" class="text-[var(--gold-old)] hover:underline font-bold">Contáctanos</a>
-        <button id="openLoginModal" data-i18n="btn_login" class="px-4 py-2 bg-[var(--gold-old)] text-black font-bold hover:bg-yellow-600 rounded-sm text-sm shadow-md transition-colors">
-          Iniciar Sesión
-        </button>
-        <button id="langToggleBtn" class="text-[var(--gold-old)] border border-[var(--gold-old)] px-2 py-1 rounded text-xs font-bold hover:bg-[var(--gold-old)] hover:text-black transition-all">
-          EN / ES
-        </button>
-        <button id="themeToggleBtn" class="text-[var(--gold-old)] hover:text-yellow-500 text-xl">
-          <i id="sunIcon" class="fas fa-sun hidden"></i>
-          <i id="moonIcon" class="fas fa-moon"></i>
-        </button>
-      </div>
-      
-      <div class="flex items-center justify-center md:justify-end space-x-4">
-        <a href="#" class="text-[var(--gold-old)] hover:text-yellow-500 text-xl"><i class="fab fa-whatsapp"></i></a>
-        <a href="#" class="text-[var(--gold-old)] hover:text-yellow-500 text-xl"><i class="fab fa-discord"></i></a>
-        <a href="#" class="text-[var(--gold-old)] hover:text-yellow-500 text-xl"><i class="fab fa-reddit"></i></a>
-      </div>
+<div class="flex justify-center md:justify-end items-center space-x-4 md:space-x-6 mb-2">
+  <a href="contacto.html" target="contenido" data-i18n="contact" class="text-[var(--gold-old)] hover:underline font-bold">Contáctanos</a>
+  
+  <button id="openLoginModal" data-i18n="btn_login" class="px-4 py-2 bg-[var(--gold-old)] text-black font-bold hover:bg-yellow-600 rounded-sm text-sm shadow-md">
+    Iniciar Sesión
+  </button>
+
+  <button id="langToggleBtn" aria-label="Cambiar idioma" class="text-[var(--gold-old)] border border-[var(--gold-old)] px-2 py-1 rounded text-xs font-bold hover:bg-[var(--gold-old)] hover:text-black">
+    EN / ES
+  </button>
+
+  <button id="themeToggleBtn" aria-label="Cambiar modo de color (Claro/Oscuro)" class="text-[var(--gold-old)] hover:text-yellow-500 text-xl">
+    <i id="sunIcon" class="fas fa-sun hidden"></i>
+    <i id="moonIcon" class="fas fa-moon"></i>
+  </button>
+</div>
+
+<div class="flex items-center justify-center md:justify-end space-x-4">
+  <a href="#" aria-label="WhatsApp" class="text-[var(--gold-old)] hover:text-yellow-500 text-xl"><i class="fab fa-whatsapp"></i></a>
+  <a href="#" aria-label="Discord" class="text-[var(--gold-old)] hover:text-yellow-500 text-xl"><i class="fab fa-discord"></i></a>
+  <a href="#" aria-label="Reddit" class="text-[var(--gold-old)] hover:text-yellow-500 text-xl"><i class="fab fa-reddit"></i></a>
+</div>
     </div>
   </header>
 
@@ -113,26 +116,35 @@
 
       <div id="loginSeparator" class="flex items-center my-8"><hr class="flex-grow border-[var(--border-primary)]"><span class="px-4 text-[var(--text-secondary)] text-sm" data-i18n="modal_or">O INGRESA</span><hr class="flex-grow border-[var(--border-primary)]"></div>
 
-      <form id="loginForm">
-        <div class="mb-4">
-          <label data-i18n="label_email" class="block text-sm text-[var(--text-secondary)] mb-2">Email (Sinluz)</label>
-          <input type="email" class="w-full p-3 bg-gray-900 border border-gray-700 rounded-md text-white focus:border-[var(--gold-old)] outline-none" placeholder="tarnished@tierrasintermedias.com">
-        </div>
-        <div class="mb-6">
-          <label data-i18n="label_pass" class="block text-sm text-[var(--text-secondary)] mb-2">Contraseña (Runa)</label>
-          <input type="password" class="w-full p-3 bg-gray-900 border border-gray-700 rounded-md text-white focus:border-[var(--gold-old)] outline-none" placeholder="••••••••">
-        </div>
-        <button type="submit" data-i18n="btn_enter" class="w-full py-3 px-4 bg-[var(--gold-old)] text-black font-bold hover:bg-yellow-600 rounded-md">Ingresar</button>
-        <p class="text-center text-[var(--text-secondary)] text-sm mt-6"><span data-i18n="new_user">¿Nuevo Sinluz?</span> <a href="#" id="showRegister" class="text-[var(--gold-old)] hover:underline" data-i18n="create_account">Crea una cuenta</a></p>
-      </form>
+<form id="loginForm">
+  <div class="mb-4">
+    <label for="login_email" data-i18n="label_email" class="block text-sm text-[var(--text-secondary)] mb-2">Email (Sinluz)</label>
+    <input id="login_email" type="email" class="w-full p-3 bg-gray-900 border border-gray-700 rounded-md text-white focus:border-[var(--gold-old)] outline-none" placeholder="tarnished@tierrasintermedias.com">
+  </div>
+  <div class="mb-6">
+    <label for="login_pass" data-i18n="label_pass" class="block text-sm text-[var(--text-secondary)] mb-2">Contraseña (Runa)</label>
+    <input id="login_pass" type="password" class="w-full p-3 bg-gray-900 border border-gray-700 rounded-md text-white focus:border-[var(--gold-old)] outline-none" placeholder="••••••••">
+  </div>
+  <button type="submit" data-i18n="btn_enter" class="w-full py-3 px-4 bg-[var(--gold-old)] text-black font-bold hover:bg-yellow-600 rounded-md">Ingresar</button>
+  <p class="text-center text-[var(--text-secondary)] text-sm mt-6"><span data-i18n="new_user">¿Nuevo Sinluz?</span> <a href="#" id="showRegister" class="text-[var(--gold-old)] hover:underline" data-i18n="create_account">Crea una cuenta</a></p>
+</form>
 
-      <form id="registerForm" class="hidden">
-        <div class="mb-4"><label data-i18n="label_email" class="block text-sm text-[var(--text-secondary)] mb-2">Email (Sinluz)</label><input type="email" class="w-full p-3 bg-gray-900 border border-gray-700 rounded-md text-white focus:border-[var(--gold-old)] outline-none"></div>
-        <div class="mb-4"><label data-i18n="label_pass" class="block text-sm text-[var(--text-secondary)] mb-2">Contraseña (Runa)</label><input type="password" class="w-full p-3 bg-gray-900 border border-gray-700 rounded-md text-white focus:border-[var(--gold-old)] outline-none"></div>
-        <div class="mb-6"><label data-i18n="label_pass_conf" class="block text-sm text-[var(--text-secondary)] mb-2">Confirmar Contraseña</label><input type="password" class="w-full p-3 bg-gray-900 border border-gray-700 rounded-md text-white focus:border-[var(--gold-old)] outline-none"></div>
-        <button type="submit" data-i18n="btn_register" class="w-full py-3 px-4 bg-[var(--gold-old)] text-black font-bold hover:bg-yellow-600 rounded-md">Registrarse</button>
-        <p class="text-center text-[var(--text-secondary)] text-sm mt-6"><span data-i18n="have_account">¿Ya tienes cuenta?</span> <a href="#" id="showLogin" class="text-[var(--gold-old)] hover:underline" data-i18n="btn_login">Inicia Sesión</a></p>
-      </form>
+<form id="registerForm" class="hidden">
+  <div class="mb-4">
+    <label for="reg_email" data-i18n="label_email" class="block text-sm text-[var(--text-secondary)] mb-2">Email (Sinluz)</label>
+    <input id="reg_email" type="email" class="w-full p-3 bg-gray-900 border border-gray-700 rounded-md text-white focus:border-[var(--gold-old)] outline-none">
+  </div>
+  <div class="mb-4">
+    <label for="reg_pass" data-i18n="label_pass" class="block text-sm text-[var(--text-secondary)] mb-2">Contraseña (Runa)</label>
+    <input id="reg_pass" type="password" class="w-full p-3 bg-gray-900 border border-gray-700 rounded-md text-white focus:border-[var(--gold-old)] outline-none">
+  </div>
+  <div class="mb-6">
+    <label for="reg_pass_conf" data-i18n="label_pass_conf" class="block text-sm text-[var(--text-secondary)] mb-2">Confirmar Contraseña</label>
+    <input id="reg_pass_conf" type="password" class="w-full p-3 bg-gray-900 border border-gray-700 rounded-md text-white focus:border-[var(--gold-old)] outline-none">
+  </div>
+  <button type="submit" data-i18n="btn_register" class="w-full py-3 px-4 bg-[var(--gold-old)] text-black font-bold hover:bg-yellow-600 rounded-md">Registrarse</button>
+  <p class="text-center text-[var(--text-secondary)] text-sm mt-6"><span data-i18n="have_account">¿Ya tienes cuenta?</span> <a href="#" id="showLogin" class="text-[var(--gold-old)] hover:underline" data-i18n="btn_login">Inicia Sesión</a></p>
+</form>
     </div>
   </div>
 
