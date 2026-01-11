@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inicio - Elden Ring</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --gold-old: #b8860b; --text-primary: #e0e0e0; --text-secondary: #d1d5db;
+      --bg-overlay: rgba(0, 0, 0, 0.6); --bg-overlay-darker: rgba(0, 0, 0, 0.7);
+      --bg-image: url('fondo-eldenring.jpg'); --bg-overlay-color: rgba(0, 0, 0, 0.6);
+    }
+    .light-mode {
+      --gold-old: #734d00; --text-primary: #1a160d; --text-secondary: #2d281e; 
+      --bg-overlay: rgba(253, 250, 243, 0.92); --bg-overlay-darker: rgba(242, 236, 217, 0.95);
+      --bg-overlay-color: rgba(253, 250, 243, 0.8); 
+    }
+    body {
+      font-family: 'Cinzel', serif; background-image: var(--bg-image); background-size: cover;
+      background-position: center; background-attachment: fixed; background-color: #f4f1ea;
+      color: var(--text-primary); transition: all 0.3s ease; position: relative;
+    }
+    body::before {
+      content: ""; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background: var(--bg-overlay-color); z-index: -1;
+    }
+  </style>
+</head>
+<body class="min-h-screen">
+
+  <section class="flex flex-col items-center justify-center text-center px-6 py-32">
+    <h1 data-i18n="hero_h1" class="text-5xl md:text-6xl font-bold text-[var(--gold-old)]">Las Tierras Intermedias te esperan</h1>
+    <p data-i18n="hero_p" class="mt-6 text-[var(--text-secondary)] text-lg max-w-2xl leading-relaxed">
+      Sumérgete en un vasto mundo lleno de misterios, ruinas ancestrales y enemigos colosales. 
+      Explora, lucha y forja tu propio destino como un Sinluz en busca del Círculo de Elden.
+    </p>
+  </section>
+
+  <section class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center px-6 py-16 bg-[var(--bg-overlay)]">
+    <div>
+      <h2 data-i18n="sec1_h2" class="text-3xl font-bold text-[var(--gold-old)] mb-4">Un legado de oscuridad y gloria</h2>
+      <p data-i18n="sec1_p" class="text-[var(--text-secondary)] leading-relaxed">
+        Elden Ring es una epopeya de acción y fantasía desarrollada por FromSoftware, creadores de Dark Souls.
+        Con un mundo abierto y narrativa profunda, redefine la experiencia del género RPG.
+      </p>
+    </div>
+    <img src="resumen.jpg" alt="Elden Ring" class="rounded-lg shadow-lg">
+  </section>
+
+  <section class="text-center py-16 bg-[var(--bg-overlay-darker)]">
+    <h2 data-i18n="prizes_h2" class="text-3xl font-bold text-[var(--gold-old)] mb-8">Premios y Reconocimientos</h2>
+    <img src="premios.png" alt="Premios" class="mx-auto w-3/4 md:w-1/2">
+  </section>
+
+  <section class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center px-6 py-16 bg-[var(--bg-overlay)]">
+    <img src="mundo.jpg" alt="Mundo" class="rounded-lg shadow-lg">
+    <div>
+      <h2 data-i18n="world_h2" class="text-3xl font-bold text-[var(--gold-old)] mb-4">Un Mundo de Fantasía Oscura</h2>
+      <p data-i18n="world_p" class="text-[var(--text-secondary)] leading-relaxed">
+        Descubre un entorno vasto con castillos, catacumbas y pantanos. 
+        Cada rincón guarda secretos y desafíos dignos de un verdadero Sinluz.
+      </p>
+    </div>
+  </section>
+
+  <section class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center px-6 py-16 bg-[var(--bg-overlay)]">
+    <div>
+      <h2 data-i18n="game_h2" class="text-3xl font-bold text-[var(--gold-old)] mb-4">Jugabilidad y Exploración</h2>
+      <p data-i18n="game_p" class="text-[var(--text-secondary)] leading-relaxed">
+        Combina combate táctico, magia y sigilo para sobrevivir. 
+        Personaliza tus habilidades y equipo en un sistema de progresión sin límites.
+      </p>
+    </div>
+    <img src="jugabilidad.jpg" alt="Jugabilidad" class="rounded-lg shadow-lg">
+  </section>
+
+  <section class="text-center py-16 bg-[var(--bg-overlay-darker)]">
+    <h2 data-i18n="char_h2" class="text-3xl font-bold text-[var(--gold-old)] mb-8">Personajes</h2>
+    <img src="personajes.jpg" alt="Personajes" class="mx-auto w-3/4 md:w-1/2 rounded-lg shadow-lg">
+  </section>
+
+  <section class="px-6 py-16 bg-[var(--bg-overlay-darker)] text-center">
+    <h2 data-i18n="req_h2" class="text-3xl font-bold text-[var(--gold-old)] mb-8">Requisitos del Sistema</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto text-left text-[var(--text-secondary)]">
+      <div>
+        <h3 data-i18n="req_min" class="text-2xl font-semibold text-[var(--gold-old)] mb-2">Mínimos</h3>
+        <ul class="list-disc list-inside">
+          <li>SO: Windows 10</li>
+          <li>CPU: Intel Core i5-8400 / AMD Ryzen 3 3300X</li>
+          <li>RAM: 12 GB</li>
+          <li>GPU: NVIDIA GTX 1060 / AMD RX 580</li>
+          <li data-i18n="req_storage">Espacio: 60 GB disponibles</li>
+        </ul>
+      </div>
+      <div>
+        <h3 data-i18n="req_rec" class="text-2xl font-semibold text-[var(--gold-old)] mb-2">Recomendados</h3>
+        <ul class="list-disc list-inside">
+          <li>SO: Windows 10/11</li>
+          <li>CPU: Intel Core i7-8700K / AMD Ryzen 5 3600X</li>
+          <li>RAM: 16 GB</li>
+          <li>GPU: NVIDIA GTX 1070 / AMD RX VEGA 56</li>
+          <li data-i18n="req_storage">Espacio: 60 GB disponibles</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const contentTranslations = {
+      es: {
+        hero_h1: "Las Tierras Intermedias te esperan",
+        hero_p: "Sumérgete en un vasto mundo lleno de misterios, ruinas ancestrales y enemigos colosales. Explora, lucha y forja tu propio destino como un Sinluz en busca del Círculo de Elden.",
+        sec1_h2: "Un legado de oscuridad y gloria",
+        sec1_p: "Elden Ring es una epopeya de acción y fantasía desarrollada por FromSoftware, creadores de Dark Souls. Con un mundo abierto y narrativa profunda, redefine la experiencia del género RPG.",
+        prizes_h2: "Premios y Reconocimientos",
+        world_h2: "Un Mundo de Fantasía Oscura",
+        world_p: "Descubre un entorno vasto con castillos, catacumbas y pantanos. Cada rincón guarda secretos y desafíos dignos de un verdadero Sinluz.",
+        game_h2: "Jugabilidad y Exploración",
+        game_p: "Combate táctico, magia y sigilo para sobrevivir. Personaliza tus habilidades y equipo en un sistema de progresión sin límites.",
+        char_h2: "Personajes",
+        req_h2: "Requisitos del Sistema",
+        req_min: "Mínimos",
+        req_rec: "Recomendados",
+        req_storage: "Almacenamiento: 60 GB disponibles"
+      },
+      en: {
+        hero_h1: "The Lands Between Await You",
+        hero_p: "Immerse yourself in a vast world full of mysteries, ancient ruins, and colossal enemies. Explore, fight, and forge your own destiny as a Tarnished in search of the Elden Ring.",
+        sec1_h2: "A Legacy of Darkness and Glory",
+        sec1_p: "Elden Ring is an action-fantasy epic developed by FromSoftware, the creators of Dark Souls. With an open world and deep narrative, it redefines the RPG experience.",
+        prizes_h2: "Awards and Accolades",
+        world_h2: "A Dark Fantasy World",
+        world_p: "Discover a vast environment with castles, catacombs, and marshes. Every corner holds secrets and challenges worthy of a true Tarnished.",
+        game_h2: "Gameplay and Exploration",
+        game_p: "Combine tactical combat, magic, and stealth to survive. Customize your skills and equipment in a progression system with no limits.",
+        char_h2: "Characters",
+        req_h2: "System Requirements",
+        req_min: "Minimum",
+        req_rec: "Recommended",
+        req_storage: "Storage: 60 GB available"
+      }
+    };
+
+    function applyTheme(theme) { document.body.classList.toggle('light-mode', theme === 'light'); }
+    function applyLanguage(lang) {
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if(contentTranslations[lang][key]) el.textContent = contentTranslations[lang][key];
+      });
+    }
+
+    window.addEventListener('message', (e) => {
+      if (e.data.theme) applyTheme(e.data.theme);
+      if (e.data.lang) applyLanguage(e.data.lang);
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+      applyTheme(localStorage.getItem('theme') || 'dark');
+      applyLanguage(localStorage.getItem('lang') || 'es');
+    });
+  </script>
+</body>
+</html>
