@@ -29,16 +29,17 @@
   <div class="flex flex-col md:flex-row justify-between items-center mb-8 gap-4 border-b border-[var(--border-color)] pb-6">
     <div>
       <h1 data-i18n="prod_title" class="text-3xl md:text-4xl font-bold cinzel text-[var(--gold-old)]">Armería y Provisiones</h1>
-      <p data-i18n="prod_subtitle" class="text-sm text-gray-500 mt-1">Equipamiento oficial para tu viaje.</p>
+      <p data-i18n="prod_subtitle" class="text-sm text-gray-400 mt-1">Equipamiento oficial para tu viaje.</p>
     </div>
     
     <div class="flex items-center gap-4 w-full md:w-auto">
       <div class="relative w-full md:w-64">
-        <input type="text" id="searchInput" data-i18n="search_ph" placeholder="Buscar objeto..." class="w-full bg-[var(--bg-card)] border border-[var(--border-color)] rounded px-4 py-2 text-sm focus:outline-none focus:border-[var(--gold-old)] transition">
-        <i class="fas fa-search absolute right-3 top-2.5 text-gray-500"></i>
+        <label for="searchInput" class="sr-only" data-i18n="search_label">Buscar objeto</label>
+        <input type="text" id="searchInput" data-i18n="search_ph" placeholder="Buscar objeto..." class="w-full bg-[var(--bg-card)] border border-[var(--border-color)] rounded px-4 py-2 text-sm focus:outline-none focus:border-[var(--gold-old)] transition text-[var(--text-primary)]">
+        <i class="fas fa-search absolute right-3 top-2.5 text-gray-400" aria-hidden="true"></i>
       </div>
       
-      <div class="relative group cursor-pointer">
+      <div class="relative group cursor-pointer" tabindex="0" aria-label="Ver carrito de compras">
         <i class="fas fa-shopping-bag text-2xl text-[var(--gold-old)] hover:text-white transition"></i>
         <span id="cartCount" class="absolute -top-2 -right-2 bg-red-600 text-white text-xs font-bold w-5 h-5 flex items-center justify-center rounded-full">0</span>
         <div class="absolute right-0 mt-2 w-48 bg-[var(--bg-card)] border border-[var(--gold-old)] rounded shadow-xl opacity-0 group-hover:opacity-100 invisible group-hover:visible transition duration-300 z-50 p-2 text-center text-xs">
@@ -67,29 +68,29 @@
         <div class="bg-[var(--bg-card)] border border-[var(--border-color)] rounded-lg overflow-hidden group hover:border-[var(--gold-old)] transition duration-300 flex flex-col product-item category-books" data-name="books of knowledge">
           <div class="relative h-64 bg-gray-900 overflow-hidden">
             <span data-i18n="lbl_phys" class="absolute top-2 left-2 bg-blue-600 text-white text-[10px] font-bold px-2 py-1 uppercase z-10">Físico</span>
-            <img src="book.jpeg" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <img src="book.jpeg" alt="Portada de Books of Knowledge Vol. I" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
           </div>
           <div class="p-5 flex-grow flex flex-col">
             <h3 data-i18n="item1_title" class="text-xl font-bold cinzel mb-2">Books of Knowledge Vol. I</h3>
-            <p data-i18n="item1_desc" class="text-xs text-gray-500 mb-4">La guía definitiva de las Tierras Intermedias. Lore detallado.</p>
+            <p data-i18n="item1_desc" class="text-xs text-gray-400 mb-4">La guía definitiva de las Tierras Intermedias. Lore detallado.</p>
             <div class="mt-auto flex justify-between items-end pt-4 border-t border-[var(--border-color)]">
               <span class="text-2xl font-bold text-[var(--gold-old)]">49.99 €</span>
-              <button onclick="addToCart('Books of Knowledge Vol. I')" class="w-10 h-10 rounded-full border border-[var(--gold-old)] text-[var(--gold-old)] hover:bg-[var(--gold-old)] hover:text-black flex items-center justify-center"><i class="fas fa-plus"></i></button>
+              <button onclick="addToCart('Books of Knowledge Vol. I')" aria-label="Añadir Books of Knowledge al carrito" class="w-10 h-10 rounded-full border border-[var(--gold-old)] text-[var(--gold-old)] hover:bg-[var(--gold-old)] hover:text-black flex items-center justify-center transition-colors"><i class="fas fa-plus" aria-hidden="true"></i></button>
             </div>
           </div>
         </div>
 
          <div class="bg-[var(--bg-card)] border border-[var(--border-color)] rounded-lg overflow-hidden group hover:border-[var(--gold-old)] transition duration-300 flex flex-col product-item category-tech" data-name="controller">
           <div class="relative h-64 bg-gray-900 overflow-hidden">
-             <span data-i18n="lbl_lim" class="absolute top-2 left-2 bg-purple-600 text-white text-[10px] font-bold px-2 py-1 uppercase z-10">Limitado</span>
-            <img src="control.jpg" class="w-full h-full object-contain p-4 group-hover:scale-105 transition duration-500">
+              <span data-i18n="lbl_lim" class="absolute top-2 left-2 bg-purple-600 text-white text-[10px] font-bold px-2 py-1 uppercase z-10">Limitado</span>
+            <img src="control.jpg" alt="Mando Controller Pro Golden Order" class="w-full h-full object-contain p-4 group-hover:scale-105 transition duration-500">
           </div>
           <div class="p-5 flex-grow flex flex-col">
             <h3 data-i18n="item2_title" class="text-xl font-bold cinzel mb-2">Controller Pro "Golden Order"</h3>
-            <p data-i18n="item2_desc" class="text-xs text-gray-500 mb-4">Edición especial con grabados rúnicos y acabado dorado.</p>
+            <p data-i18n="item2_desc" class="text-xs text-gray-400 mb-4">Edición especial con grabados rúnicos y acabado dorado.</p>
             <div class="mt-auto flex justify-between items-end pt-4 border-t border-[var(--border-color)]">
               <span class="text-2xl font-bold text-[var(--gold-old)]">79.99 €</span>
-              <button onclick="addToCart('Controller Golden Order')" class="w-10 h-10 rounded-full border border-[var(--gold-old)] text-[var(--gold-old)] hover:bg-[var(--gold-old)] hover:text-black flex items-center justify-center"><i class="fas fa-plus"></i></button>
+              <button onclick="addToCart('Controller Golden Order')" aria-label="Añadir Controller Pro al carrito" class="w-10 h-10 rounded-full border border-[var(--gold-old)] text-[var(--gold-old)] hover:bg-[var(--gold-old)] hover:text-black flex items-center justify-center transition-colors"><i class="fas fa-plus" aria-hidden="true"></i></button>
             </div>
           </div>
         </div>
@@ -97,14 +98,14 @@
         <div class="bg-[var(--bg-card)] border border-[var(--border-color)] rounded-lg overflow-hidden group hover:border-[var(--gold-old)] transition duration-300 flex flex-col product-item category-games" data-name="shadow erdtree">
           <div class="relative h-64 bg-gray-900 overflow-hidden">
              <span class="absolute top-2 left-2 bg-red-600 text-white text-[10px] font-bold px-2 py-1 uppercase z-10">DLC</span>
-            <img src="shadow.jpg" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <img src="shadow.jpg" alt="Portada DLC Shadow of the Erdtree" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
           </div>
           <div class="p-5 flex-grow flex flex-col">
             <h3 class="text-xl font-bold cinzel mb-2">Shadow of the Erdtree</h3>
-            <p data-i18n="item3_desc" class="text-xs text-gray-500 mb-4">Código digital para la expansión. Requiere juego base.</p>
+            <p data-i18n="item3_desc" class="text-xs text-gray-400 mb-4">Código digital para la expansión. Requiere juego base.</p>
             <div class="mt-auto flex justify-between items-end pt-4 border-t border-[var(--border-color)]">
               <span class="text-2xl font-bold text-[var(--gold-old)]">39.99 €</span>
-              <button onclick="addToCart('Shadow of the Erdtree')" class="w-10 h-10 rounded-full border border-[var(--gold-old)] text-[var(--gold-old)] hover:bg-[var(--gold-old)] hover:text-black flex items-center justify-center"><i class="fas fa-plus"></i></button>
+              <button onclick="addToCart('Shadow of the Erdtree')" aria-label="Añadir DLC Shadow of the Erdtree al carrito" class="w-10 h-10 rounded-full border border-[var(--gold-old)] text-[var(--gold-old)] hover:bg-[var(--gold-old)] hover:text-black flex items-center justify-center transition-colors"><i class="fas fa-plus" aria-hidden="true"></i></button>
             </div>
           </div>
         </div>
@@ -120,7 +121,7 @@
   <script>
     const translations = {
       es: {
-        prod_title: "Armería y Provisiones", prod_subtitle: "Equipamiento oficial para tu viaje.", search_ph: "Buscar objeto...", cart_empty: "Tu inventario está vacío",
+        prod_title: "Armería y Provisiones", prod_subtitle: "Equipamiento oficial para tu viaje.", search_ph: "Buscar objeto...", search_label: "Buscar objeto", cart_empty: "Tu inventario está vacío",
         type_title: "Tipo de Objeto", cat_all: "Todos", cat_game: "Juegos & DLC", cat_book: "Libros y Guías", cat_music: "Música (Vinilos)", cat_tech: "Periféricos",
         lbl_phys: "Físico", item1_title: "Books of Knowledge Vol. I", item1_desc: "La guía definitiva de las Tierras Intermedias. Lore detallado.",
         lbl_lim: "Limitado", item2_title: "Controller Pro \"Golden Order\"", item2_desc: "Edición especial con grabados rúnicos y acabado dorado.",
@@ -128,7 +129,7 @@
         toast_title: "Objeto Adquirido"
       },
       en: {
-        prod_title: "Armory & Provisions", prod_subtitle: "Official equipment for your journey.", search_ph: "Search item...", cart_empty: "Your inventory is empty",
+        prod_title: "Armory & Provisions", prod_subtitle: "Official equipment for your journey.", search_ph: "Search item...", search_label: "Search item", cart_empty: "Your inventory is empty",
         type_title: "Item Type", cat_all: "All", cat_game: "Games & DLC", cat_book: "Books & Guides", cat_music: "Music (Vinyl)", cat_tech: "Peripherals",
         lbl_phys: "Physical", item1_title: "Books of Knowledge Vol. I", item1_desc: "The definitive guide to the Lands Between. Detailed lore.",
         lbl_lim: "Limited", item2_title: "Controller Pro \"Golden Order\"", item2_desc: "Special edition with runic engravings and golden finish.",
@@ -177,6 +178,7 @@
         const key = el.getAttribute('data-i18n');
         if(translations[lang][key]) {
           if(el.tagName === 'INPUT' && el.getAttribute('placeholder')) el.placeholder = translations[lang][key];
+          else if(el.tagName === 'LABEL') el.textContent = translations[lang][key];
           else el.textContent = translations[lang][key];
         }
       });
