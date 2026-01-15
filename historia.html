@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Historia - Elden Ring</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --gold-old: #c29828; --bg-dark: #050505; --text-main: #d4d4d4;
+    }
+    .light-mode {
+      --gold-old: #8a6c1a; --bg-dark: #f0ebe0; --text-main: #2a2a2a;
+    }
+    body { font-family: 'Playfair Display', serif; background-color: var(--bg-dark); color: var(--text-main); line-height: 1.8; }
+    h1, h2, h3, .cinzel { font-family: 'Cinzel', serif; }
+    .lore-quote { border-left: 3px solid var(--gold-old); padding-left: 2rem; font-style: italic; color: var(--gold-old); font-size: 1.5rem; margin: 3rem 0; opacity: 0.9; }
+    .timeline-item { position: relative; border-left: 2px solid var(--gold-old); padding-left: 2rem; padding-bottom: 2rem; }
+    .timeline-item::before { content: ''; position: absolute; left: -9px; top: 0; width: 16px; height: 16px; background: var(--gold-old); border-radius: 50%; border: 3px solid var(--bg-dark); }
+    .character-card { background: linear-gradient(to top, black, transparent); }
+    .light-mode .character-card { background: linear-gradient(to top, rgba(200,200,200,0.8), transparent); }
+  </style>
+</head>
+<body class="p-0">
+
+  <header class="relative h-[60vh] flex items-center justify-center overflow-hidden border-b border-[var(--gold-old)]">
+    <img src="https://images4.alphacoders.com/129/1299946.jpg" class="absolute inset-0 w-full h-full object-cover opacity-50">
+    <div class="absolute inset-0 bg-gradient-to-t from-[var(--bg-dark)] to-transparent"></div>
+    <div class="relative z-10 text-center px-4">
+      <h1 data-i18n="lore_title" class="text-5xl md:text-7xl font-bold text-[var(--gold-old)] mb-4 drop-shadow-xl">La Era de la Fractura</h1>
+      <p data-i18n="lore_subtitle" class="text-xl max-w-2xl mx-auto italic opacity-80">"El Círculo de Elden ha sido destruido. Sucedió en las Tierras Intermedias..."</p>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-6 py-16">
+    <section class="mb-20 text-center">
+      <p data-i18n="intro_text" class="text-lg md:text-xl leading-relaxed">
+        Hace mucho tiempo, la Reina Marika la Eterna gobernaba sobre todo bajo la luz del Árbol Áureo. Pero con la Noche de los Puñales Negros, la muerte se infiltró en el orden dorado.
+      </p>
+    </section>
+
+    <section class="mb-20">
+      <h2 data-i18n="shattering_title" class="text-3xl font-bold text-[var(--gold-old)] mb-10 text-center uppercase tracking-widest border-b border-gray-700 pb-4">La Devastación</h2>
+      <div class="ml-4 md:ml-10">
+        <div class="timeline-item">
+          <h3 data-i18n="time1_title" class="text-xl font-bold text-[var(--gold-old)] cinzel">La Ruptura</h3>
+          <p data-i18n="time1_desc" class="mt-2 text-sm opacity-80">Marika destruye el Círculo de Elden, y Radagon intenta repararlo sin éxito.</p>
+        </div>
+        <div class="timeline-item">
+          <h3 data-i18n="time2_title" class="text-xl font-bold text-[var(--gold-old)] cinzel">La Guerra de los Semidioses</h3>
+          <p data-i18n="time2_desc" class="mt-2 text-sm opacity-80">Los hijos de Marika reclaman las runas. Enloquecidos por su nuevo poder, inician una guerra total.</p>
+        </div>
+        <div class="timeline-item">
+          <h3 data-i18n="time3_title" class="text-xl font-bold text-[var(--gold-old)] cinzel">La Batalla de Caelid</h3>
+          <p data-i18n="time3_desc" class="mt-2 text-sm opacity-80">El General Radahn y Malenia la Espada de Miquella se enfrentan en un duelo legendario.</p>
+        </div>
+      </div>
+    </section>
+
+    <blockquote data-i18n="quote_grace" class="lore-quote">"Levantaos, Sinluz. Vosotros muertos que aún vivís. La llamada de la gracia olvidada os habla a todos."</blockquote>
+
+    <section class="mb-20">
+      <h2 data-i18n="demigods_title" class="text-3xl font-bold text-[var(--gold-old)] mb-10 text-center uppercase tracking-widest">Los Portadores de Runas</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="relative h-80 rounded-lg overflow-hidden group border border-gray-800">
+          <img src="Maleniaa.webp" class="absolute inset-0 w-full h-full object-cover transition duration-700 group-hover:scale-110">
+          <div class="absolute bottom-0 inset-x-0 p-6 character-card">
+            <h3 class="text-2xl font-bold text-[var(--gold-old)] cinzel">Malenia</h3>
+            <p data-i18n="char_malenia" class="text-sm text-gray-300">La Espada de Miquella. Invicta en batalla, maldita por la putrefacción.</p>
+          </div>
+        </div>
+        <div class="relative h-80 rounded-lg overflow-hidden group border border-gray-800">
+          <img src="radahn.webp" class="absolute inset-0 w-full h-full object-cover transition duration-700 group-hover:scale-110">
+          <div class="absolute bottom-0 inset-x-0 p-6 character-card">
+            <h3 data-i18n="name_radahn" class="text-2xl font-bold text-[var(--gold-old)] cinzel">General Radahn</h3>
+            <p data-i18n="char_radahn" class="text-sm text-gray-300">El Azote de las Estrellas. Mantiene a raya el movimiento del cosmos.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const translations = {
+      es: {
+        lore_title: "La Era de la Fractura", lore_subtitle: "\"El Círculo de Elden ha sido destruido. Sucedió en las Tierras Intermedias...\"",
+        intro_text: "Hace mucho tiempo, la Reina Marika la Eterna gobernaba sobre todo bajo la luz del Árbol Áureo. Pero con la Noche de los Puñales Negros, la muerte se infiltró en el orden dorado.",
+        shattering_title: "La Devastación",
+        time1_title: "La Ruptura", time1_desc: "Marika destruye el Círculo de Elden, y Radagon intenta repararlo sin éxito.",
+        time2_title: "La Guerra", time2_desc: "Los hijos de Marika reclaman las runas. Enloquecidos por poder, inician una guerra total.",
+        time3_title: "Batalla de Caelid", time3_desc: "El General Radahn y Malenia la Espada de Miquella se enfrentan en un duelo legendario.",
+        quote_grace: "\"Levantaos, Sinluz. Vosotros muertos que aún vivís. La llamada de la gracia olvidada os habla a todos.\"",
+        demigods_title: "Los Portadores de Runas",
+        char_malenia: "La Espada de Miquella. Invicta en batalla, maldita por la putrefacción.",
+        name_radahn: "General Radahn", char_radahn: "El Azote de las Estrellas. Mantiene a raya el movimiento del cosmos."
+      },
+      en: {
+        lore_title: "The Age of Fracture", lore_subtitle: "\"The Elden Ring was shattered. It happened in the Lands Between...\"",
+        intro_text: "Long ago, Queen Marika the Eternal ruled over all under the light of the Erdtree. But with the Night of the Black Knives, death infiltrated the Golden Order.",
+        shattering_title: "The Shattering",
+        time1_title: "The Fracture", time1_desc: "Marika shatters the Elden Ring, and Radagon attempts to repair it to no avail.",
+        time2_title: "The War", time2_desc: "Marika's offspring claim the shards. Mad with power, they trigger a total war.",
+        time3_title: "Battle of Caelid", time3_desc: "General Radahn and Malenia the Blade of Miquella clash in a legendary duel.",
+        quote_grace: "\"Arise now, ye Tarnished. Ye dead who yet live. The call of long-lost grace speaks to us all.\"",
+        demigods_title: "The Shardbearers",
+        char_malenia: "Blade of Miquella. Undefeated in battle, cursed by the Scarlet Rot.",
+        name_radahn: "General Radahn", char_radahn: "The Starscourge. Holding back the very stars themselves."
+      }
+    };
+
+    function applyTheme(theme) { document.body.classList.toggle('light-mode', theme === 'light'); }
+    function applyLanguage(lang) {
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if(translations[lang][key]) el.textContent = translations[lang][key];
+      });
+    }
+    window.addEventListener('message', (e) => {
+      if (e.data.theme) applyTheme(e.data.theme);
+      if (e.data.lang) applyLanguage(e.data.lang);
+    });
+  </script>
+</body>
+</html>

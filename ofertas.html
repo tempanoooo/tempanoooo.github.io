@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ofertas - Elden Ring</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Lora:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <style>
+    :root {
+      --gold-old: #c29828; --gold-dim: #6d5616;
+      --bg-dark: #0a0a0a; --bg-card: #141414;
+      --text-main: #d4d4d4; --text-muted: #737373;
+    }
+    .light-mode {
+      --gold-old: #8a6c1a; --gold-dim: #b89c4a;
+      --bg-dark: #f0ebe0; --bg-card: #e6e0d1;
+      --text-main: #1f1f1f; --text-muted: #525252;
+    }
+    body { font-family: 'Lora', serif; background-color: var(--bg-dark); color: var(--text-main); transition: all 0.3s; }
+    h1, h2, h3, .cinzel { font-family: 'Cinzel', serif; }
+    .card-hover:hover { transform: translateY(-5px); box-shadow: 0 10px 30px -10px rgba(194, 152, 40, 0.3); }
+    .btn-gold { background: linear-gradient(45deg, var(--gold-dim), var(--gold-old)); color: #000; font-weight: 700; }
+    .btn-gold:hover { filter: brightness(1.2); }
+  </style>
+</head>
+<body class="p-4 md:p-8 pb-16">
+
+  <div class="relative rounded-xl overflow-hidden mb-12 border border-[var(--gold-dim)] group">
+    <div class="absolute inset-0 bg-black/60 group-hover:bg-black/40 transition duration-700"></div>
+    <img src="shadow.jpg" class="w-full h-[400px] object-cover -z-10" alt="Shadow of the Erdtree">
+    <div class="absolute bottom-0 left-0 p-8 md:p-12 w-full md:w-2/3">
+      <span data-i18n="badge_top" class="bg-red-700 text-white px-3 py-1 text-xs font-bold uppercase tracking-widest mb-2 inline-block">Top Ventas</span>
+      <h1 class="text-4xl md:text-5xl font-bold text-white mb-4 drop-shadow-lg">Shadow of the Erdtree</h1>
+      <p data-i18n="hero_desc" class="text-gray-200 mb-6 text-lg">La expansión masiva ya está aquí. Viaja a la Tierra de las Sombras y descubre los secretos de Miquella.</p>
+      <div class="flex items-center gap-4">
+        <span class="text-3xl font-bold text-[var(--gold-old)]">39.99 €</span>
+        <button data-i18n="btn_buy" class="btn-gold px-8 py-3 rounded uppercase tracking-wider">Comprar Ahora</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="text-center mb-12 bg-[var(--bg-card)] p-6 rounded border border-[var(--gold-dim)]/30 mx-auto max-w-4xl">
+    <h3 data-i18n="deal_ends" class="text-[var(--gold-old)] text-xl mb-4 uppercase tracking-widest border-b border-[var(--gold-dim)] inline-block pb-2">Las Ofertas de la Gracia terminan en:</h3>
+    <div class="flex justify-center gap-8 text-3xl md:text-5xl font-bold cinzel mt-2" id="countdown">
+      <div>02<span data-i18n="time_days" class="block text-sm text-[var(--text-muted)] mt-1">Días</span></div>
+      <div>14<span data-i18n="time_hours" class="block text-sm text-[var(--text-muted)] mt-1">Horas</span></div>
+      <div>35<span data-i18n="time_min" class="block text-sm text-[var(--text-muted)] mt-1">Min</span></div>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+    <div class="bg-[var(--bg-card)] rounded-lg overflow-hidden border border-[var(--text-muted)]/20 card-hover transition duration-300 flex flex-col">
+      <div class="relative">
+        <img src="eldenbase.jpg" class="w-full h-56 object-cover">
+        <div class="absolute top-2 right-2 bg-black/80 text-[var(--gold-old)] px-2 py-1 font-bold border border-[var(--gold-old)]">-30%</div>
+      </div>
+      <div class="p-6 flex-grow">
+        <h3 data-i18n="std_title" class="text-2xl font-bold mb-2">Standard Edition</h3>
+        <p data-i18n="std_desc" class="text-[var(--text-muted)] text-sm mb-4">El juego base completo. Ganador del GOTY 2022.</p>
+        <ul class="text-sm space-y-2 mb-6 text-[var(--text-main)]">
+          <li class="flex items-center"><i class="fas fa-check text-[var(--gold-old)] mr-2"></i> <span data-i18n="feat_game">Juego Base Elden Ring</span></li>
+          <li class="flex items-center"><i class="fas fa-times text-red-500 mr-2"></i> <span data-i18n="feat_art">Libro de Arte Digital</span></li>
+        </ul>
+      </div>
+      <div class="p-6 border-t border-[var(--text-muted)]/20 flex justify-between items-center">
+        <div><span class="block text-xs line-through text-[var(--text-muted)]">59.99 €</span><span class="text-2xl font-bold text-[var(--gold-old)]">41.99 €</span></div>
+        <button class="border border-[var(--gold-old)] text-[var(--gold-old)] hover:bg-[var(--gold-old)] hover:text-black px-4 py-2 rounded transition"><i class="fas fa-shopping-cart"></i></button>
+      </div>
+    </div>
+
+    <div class="bg-[var(--bg-card)] rounded-lg overflow-hidden border-2 border-[var(--gold-old)] relative card-hover transition duration-300 flex flex-col transform scale-105 shadow-2xl z-10">
+      <div data-i18n="badge_rec" class="absolute top-0 left-0 w-full bg-[var(--gold-old)] text-black text-center font-bold text-xs py-1 uppercase">Recomendado</div>
+      <div class="relative mt-6">
+        <img src="deluxe.jpg" class="w-full h-56 object-cover">
+      </div>
+      <div class="p-6 flex-grow">
+        <h3 data-i18n="deluxe_title" class="text-2xl font-bold mb-2 text-[var(--gold-old)]">Deluxe Edition</h3>
+        <p data-i18n="deluxe_desc" class="text-[var(--text-muted)] text-sm mb-4">La experiencia completa para el verdadero Sinluz.</p>
+        <ul class="text-sm space-y-2 mb-6 text-[var(--text-main)]">
+          <li class="flex items-center"><i class="fas fa-check text-[var(--gold-old)] mr-2"></i> <span data-i18n="feat_game">Juego Base</span></li>
+          <li class="flex items-center"><i class="fas fa-check text-[var(--gold-old)] mr-2"></i> <span data-i18n="feat_art">Libro de Arte Digital</span></li>
+          <li class="flex items-center"><i class="fas fa-check text-[var(--gold-old)] mr-2"></i> <span data-i18n="feat_ost">Banda Sonora Original</span></li>
+        </ul>
+      </div>
+      <div class="p-6 border-t border-[var(--text-muted)]/20 flex justify-between items-center bg-[var(--gold-old)]/10">
+        <div><span class="block text-xs line-through text-[var(--text-muted)]">79.99 €</span><span class="text-2xl font-bold text-[var(--gold-old)]">59.99 €</span></div>
+        <button class="btn-gold px-6 py-2 rounded shadow-lg"><i class="fas fa-shopping-cart mr-2"></i> <span data-i18n="btn_add">Añadir</span></button>
+      </div>
+    </div>
+
+    <div class="bg-[var(--bg-card)] rounded-lg overflow-hidden border border-[var(--text-muted)]/20 card-hover transition duration-300 flex flex-col">
+      <div class="relative">
+        <img src="shadow.jpg" class="w-full h-56 object-cover">
+      </div>
+      <div class="p-6 flex-grow">
+        <h3 data-i18n="bundle_title" class="text-2xl font-bold mb-2">Shadow Bundle</h3>
+        <p data-i18n="bundle_desc" class="text-[var(--text-muted)] text-sm mb-4">Incluye el juego base y la expansión masiva.</p>
+        <ul class="text-sm space-y-2 mb-6 text-[var(--text-main)]">
+          <li class="flex items-center"><i class="fas fa-check text-[var(--gold-old)] mr-2"></i> <span data-i18n="feat_game">Juego Base</span></li>
+          <li class="flex items-center"><i class="fas fa-check text-[var(--gold-old)] mr-2"></i> <span data-i18n="feat_dlc">Expansión Shadow Erdtree</span></li>
+        </ul>
+      </div>
+      <div class="p-6 border-t border-[var(--text-muted)]/20 flex justify-between items-center">
+        <div><span class="text-2xl font-bold text-[var(--gold-old)]">79.99 €</span></div>
+        <button class="border border-[var(--gold-old)] text-[var(--gold-old)] hover:bg-[var(--gold-old)] hover:text-black px-4 py-2 rounded transition"><i class="fas fa-shopping-cart"></i></button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const translations = {
+      es: {
+        badge_top: "Top Ventas", hero_desc: "La expansión masiva ya está aquí. Viaja a la Tierra de las Sombras y descubre los secretos de Miquella.", btn_buy: "Comprar Ahora",
+        deal_ends: "Las Ofertas de la Gracia terminan en:", time_days: "Días", time_hours: "Horas", time_min: "Min",
+        std_title: "Standard Edition", std_desc: "El juego base completo. Ganador del GOTY 2022.", feat_game: "Juego Base Elden Ring", feat_art: "Libro de Arte Digital", feat_ost: "Banda Sonora Original", feat_dlc: "Expansión Shadow Erdtree",
+        deluxe_title: "Deluxe Edition", deluxe_desc: "La experiencia completa para el verdadero Sinluz.", badge_rec: "Recomendado", btn_add: "Añadir",
+        bundle_title: "Shadow Bundle", bundle_desc: "Incluye el juego base y la expansión masiva."
+      },
+      en: {
+        badge_top: "Best Seller", hero_desc: "The massive expansion is here. Journey to the Land of Shadow and discover Miquella's secrets.", btn_buy: "Buy Now",
+        deal_ends: "Grace Deals End In:", time_days: "Days", time_hours: "Hours", time_min: "Mins",
+        std_title: "Standard Edition", std_desc: "The complete base game. 2022 GOTY Winner.", feat_game: "Elden Ring Base Game", feat_art: "Digital Artbook", feat_ost: "Original Soundtrack", feat_dlc: "Shadow Erdtree Expansion",
+        deluxe_title: "Deluxe Edition", deluxe_desc: "The complete experience for the true Tarnished.", badge_rec: "Recommended", btn_add: "Add",
+        bundle_title: "Shadow Bundle", bundle_desc: "Includes base game and massive expansion."
+      }
+    };
+
+    function applyTheme(theme) { document.body.classList.toggle('light-mode', theme === 'light'); }
+    function applyLanguage(lang) {
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if(translations[lang][key]) el.textContent = translations[lang][key];
+      });
+    }
+    window.addEventListener('message', (e) => {
+      if (e.data.theme) applyTheme(e.data.theme);
+      if (e.data.lang) applyLanguage(e.data.lang);
+    });
+  </script>
+</body>
+</html>

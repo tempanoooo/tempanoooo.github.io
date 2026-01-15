@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Merchandising</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <style>
+    :root {
+      --gold-old: #b8860b; --bg-dark: #0b0b0b; --text-primary: #e5e5e5;
+      --card-bg: #161616; --border-color: #333;
+    }
+    .light-mode {
+      --gold-old: #855d00; --bg-dark: #f4f1ea; --text-primary: #1a1a1a;
+      --card-bg: #fff; --border-color: #d1d5db;
+    }
+    body { font-family: 'Inter', sans-serif; background-color: var(--bg-dark); color: var(--text-primary); transition: background-color 0.3s; }
+    h1, h2, h3, .cinzel { font-family: 'Cinzel', serif; }
+    .product-card:hover .product-actions { opacity: 1; transform: translateY(0); }
+    .product-actions { opacity: 0; transform: translateY(10px); transition: all 0.3s ease; }
+    .filter-btn.active { background-color: var(--gold-old); color: black; border-color: var(--gold-old); }
+  </style>
+</head>
+<body class="p-6">
+  
+  <div class="flex flex-col md:flex-row gap-8 max-w-7xl mx-auto">
+    
+    <aside class="w-full md:w-1/4">
+      <div class="sticky top-4">
+        <h2 data-i18n="filters_title" class="text-2xl font-bold text-[var(--gold-old)] mb-6 border-b border-[var(--border-color)] pb-2 cinzel">Inventario</h2>
+        
+        <div class="space-y-3">
+          <h3 data-i18n="cat_title" class="font-semibold text-sm uppercase tracking-wide text-gray-500">Categorías</h3>
+          <button onclick="filterProducts('all')" data-i18n="cat_all" class="filter-btn active w-full text-left px-4 py-2 border border-[var(--border-color)] rounded hover:border-[var(--gold-old)] transition">Todo</button>
+          <button onclick="filterProducts('figures')" data-i18n="cat_figs" class="filter-btn w-full text-left px-4 py-2 border border-[var(--border-color)] rounded hover:border-[var(--gold-old)] transition">Figuras & Estatuas</button>
+          <button onclick="filterProducts('apparel')" data-i18n="cat_cloth" class="filter-btn w-full text-left px-4 py-2 border border-[var(--border-color)] rounded hover:border-[var(--gold-old)] transition">Vestimenta</button>
+          <button onclick="filterProducts('replicas')" data-i18n="cat_reps" class="filter-btn w-full text-left px-4 py-2 border border-[var(--border-color)] rounded hover:border-[var(--gold-old)] transition">Réplicas de Armas</button>
+        </div>
+
+        <div class="mt-8 p-4 bg-[var(--card-bg)] rounded border border-[var(--gold-old)] text-center">
+          <h4 data-i18n="ship_title" class="font-bold text-[var(--gold-old)] cinzel">Envío Gratuito</h4>
+          <p data-i18n="ship_desc" class="text-sm text-gray-500 mt-2">En pedidos superiores a 100 Runas (USD).</p>
+        </div>
+      </div>
+    </aside>
+
+    <main class="w-full md:w-3/4">
+      <div class="flex justify-between items-center mb-6">
+        <h1 data-i18n="shop_title" class="text-3xl font-bold cinzel">Tesoros de las Tierras Intermedias</h1>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="product-card bg-[var(--card-bg)] rounded-lg overflow-hidden border border-[var(--border-color)] group relative category-figures">
+          <div data-i18n="lbl_bestseller" class="absolute top-2 left-2 z-10 bg-red-600 text-white text-xs font-bold px-2 py-1 uppercase">Best Seller</div>
+          <div class="h-64 overflow-hidden bg-gray-800 relative">
+            <img src="malenia.webp" class="w-full h-full object-contain group-hover:scale-110 transition duration-500">
+            <div class="product-actions absolute inset-0 bg-black/40 flex items-center justify-center gap-2">
+              <button class="bg-white text-black p-3 rounded-full hover:bg-[var(--gold-old)] transition"><i class="fas fa-shopping-cart"></i></button>
+            </div>
+          </div>
+          <div class="p-4">
+            <p data-i18n="type_coll" class="text-xs text-[var(--gold-old)] uppercase mb-1">Edición Coleccionista</p>
+            <h3 class="text-lg font-bold cinzel leading-tight mb-2">Malenia, Espada de Miquella</h3>
+            <span class="text-xl font-bold">$189.99</span>
+          </div>
+        </div>
+
+        <div class="product-card bg-[var(--card-bg)] rounded-lg overflow-hidden border border-[var(--border-color)] group relative category-apparel">
+          <div class="h-64 overflow-hidden bg-gray-800 relative">
+            <img src="polera.jpg" class="w-full h-full object-contain group-hover:scale-110 transition duration-500">
+             <div class="product-actions absolute inset-0 bg-black/40 flex items-center justify-center gap-2">
+              <button class="bg-white text-black p-3 rounded-full hover:bg-[var(--gold-old)] transition"><i class="fas fa-shopping-cart"></i></button>
+            </div>
+          </div>
+          <div class="p-4">
+            <p data-i18n="type_cloth" class="text-xs text-[var(--gold-old)] uppercase mb-1">Ropa</p>
+            <h3 class="text-lg font-bold cinzel leading-tight mb-2">Hoodie "The Tarnished"</h3>
+            <span class="text-xl font-bold">$49.99</span>
+          </div>
+        </div>
+
+        <div class="product-card bg-[var(--card-bg)] rounded-lg overflow-hidden border border-[var(--border-color)] group relative category-replicas">
+           <div data-i18n="lbl_low" class="absolute top-2 left-2 z-10 bg-[var(--gold-old)] text-black text-xs font-bold px-2 py-1 uppercase">Pocas Unidades</div>
+          <div class="h-64 overflow-hidden bg-gray-800 relative">
+            <img src="espadon.jpg" class="w-full h-full object-contain group-hover:scale-110 transition duration-500">
+             <div class="product-actions absolute inset-0 bg-black/40 flex items-center justify-center gap-2">
+              <button class="bg-white text-black p-3 rounded-full hover:bg-[var(--gold-old)] transition"><i class="fas fa-shopping-cart"></i></button>
+            </div>
+          </div>
+          <div class="p-4">
+            <p data-i18n="type_rep" class="text-xs text-[var(--gold-old)] uppercase mb-1">Escala 1:1</p>
+            <h3 data-i18n="prod_dmgs" class="text-lg font-bold cinzel leading-tight mb-2">Espadón de la Luna Oscura</h3>
+            <span class="text-xl font-bold">$299.99</span>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    const translations = {
+      es: {
+        filters_title: "Inventario", cat_title: "Categorías", cat_all: "Todo", cat_figs: "Figuras & Estatuas", cat_cloth: "Vestimenta", cat_reps: "Réplicas de Armas",
+        ship_title: "Envío Gratuito", ship_desc: "En pedidos superiores a 100 Runas (USD).", shop_title: "Tesoros de las Tierras Intermedias",
+        lbl_bestseller: "Best Seller", type_coll: "Edición Coleccionista", type_cloth: "Ropa", lbl_low: "Pocas Unidades", type_rep: "Escala 1:1", prod_dmgs: "Espadón Luna Oscura"
+      },
+      en: {
+        filters_title: "Inventory", cat_title: "Categories", cat_all: "All", cat_figs: "Figures & Statues", cat_cloth: "Apparel", cat_reps: "Weapon Replicas",
+        ship_title: "Free Shipping", ship_desc: "On orders over 100 Runes (USD).", shop_title: "Treasures of the Lands Between",
+        lbl_bestseller: "Best Seller", type_coll: "Collector's Edition", type_cloth: "Apparel", lbl_low: "Low Stock", type_rep: "1:1 Scale", prod_dmgs: "Dark Moon Greatsword"
+      }
+    };
+
+    function filterProducts(category) {
+      document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+      const cards = document.querySelectorAll('.product-card');
+      cards.forEach(card => card.classList.toggle('hidden', category !== 'all' && !card.classList.contains(`category-${category}`)));
+    }
+
+    function applyTheme(theme) { document.body.classList.toggle('light-mode', theme === 'light'); }
+    function applyLanguage(lang) {
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if(translations[lang][key]) el.textContent = translations[lang][key];
+      });
+    }
+    window.addEventListener('message', (e) => {
+      if (e.data.theme) applyTheme(e.data.theme);
+      if (e.data.lang) applyLanguage(e.data.lang);
+    });
+  </script>
+</body>
+</html>
